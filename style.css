@@ -1,0 +1,831 @@
+*{
+  padding:0px;
+  margin:0px;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.preload {
+  width:100%;
+  height:100%;
+  position: fixed;
+  top:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: skycolor, end, fadetoblack ;
+  animation-duration: 5s, 1s,2s;
+  animation-delay: 0s, 13s,15s; 
+  animation-timing-function: ease, ease,ease ;
+  animation-iteration-count: 3,1,1;
+  z-index: 999;
+}
+.cloud1{
+  height: 380px;
+  animation-name: fly, cloudsize,cloudfall, end;
+  animation-duration: 0s, 4s, 2s;
+  animation-delay: 1s, 4s,12s; 
+  animation-timing-function: ease, ease ;
+  animation-iteration-count: 3, 1,infinite;
+  animation-direction: normal;
+  position: relative;
+  animation-fill-mode: forwards;
+  top:15%;
+  right:80px;
+  
+}
+.cloud2{
+  height: 345px;
+  animation-name: fly, cloudsize, cloudfall,end;
+  animation-duration: 0s, 5s,2s, 1s;
+  animation-delay: 0s, 3s, 4s, 12s; 
+  animation-timing-function: ease, ease ;
+  animation-iteration-count: 1, 1, infinite;
+  position: relative;
+  animation-fill-mode: forwards;
+  top:5%;
+  right:40;
+ 
+} 
+.cloud6{
+  height: 275px;
+  animation-name: fly, cloudsize,cloudfall,end ;
+  animation-duration: 1s, 5s,4s;
+  animation-delay: 0s, 1s; 
+  animation-timing-function: ease, ease ;
+  animation-iteration-count: 1, 1,infinite;
+  animation-direction: normal;
+  position: relative;
+  animation-fill-mode: forwards;
+  top:15%;
+  left:20px;
+} 
+.cloud5{
+  height: 400px;
+  animation-name: fly, cloudsize,cloudfall,end ;
+  animation-duration: 0s, 5s,3s;
+  animation-delay: 0s, 4s; 
+  animation-timing-function: ease, ease ;
+  animation-iteration-count: 1, 1,25, 1;
+  animation-direction: normal;
+  position: relative;
+  animation-fill-mode: forwards;
+  
+  top:25%;
+  right:30;
+} 
+.cloud3{
+  height: 430px;
+  animation-name: fly, cloudsize,cloudfall,end ;
+  animation-duration: 0s, 1s,5s;
+  animation-delay: 0s, 3s; 
+  animation-timing-function: ease, ease ;
+  animation-iteration-count: 1, 1,25,end;
+  animation-direction: normal;
+  position: relative;
+  animation-fill-mode: forwards;
+  
+  top: 0;
+  right:50;
+  z-index: -1;
+}
+.cloud4{
+  height: 300px;
+  animation-name: fly, cloudsize,cloudfall, end ;
+  animation-duration: 0s, 1s,2s;
+  animation-delay: 0s, 7s;
+  animation-timing-function: ease, ease ;
+  animation-iteration-count: 1, 1,infinite;
+  animation-direction: normal;
+  position: relative;
+  animation-fill-mode: forwards;
+  top:25%;
+  left:50;
+} 
+#elevator{
+  height: 500px;
+  animation-name: rotate, fly, elevatorsize, drop,elevatorsizebig,end;
+  animation-duration: 1s, 3s, 2s,.5s, 2s,2s;
+  animation-delay: 0s, 1s, 5s, 8s, 12s, 13s,1s; 
+  animation-timing-function: ease, ease, ease, ease ;
+  animation-iteration-count: 1, 1, 1, 45, 1;
+  animation-direction: alternate;
+  position: absolute;
+  animation-fill-mode: forwards;
+}
+.fire{
+  height: 1px;
+  animation-name: makevisible,rotate,end;
+  animation-duration:2s,.4s,1s;
+  animation-delay: 8s, 12s; 
+  animation-timing-function: ease ;
+  animation-iteration-count:normal,25,1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  position: relative;
+  top: 160px;
+  z-index: -1;
+} 
+
+@keyframes openDoor
+{
+  from
+  {
+    left:0;
+  }
+
+  to
+  {
+    left: 82%;
+  }
+}
+
+@keyframes spin{
+  100%{-webkit-transform: rotate(360deg);}
+  
+}
+
+/*Key frames*/
+@keyframes sidenavposition
+{
+  from
+  {
+     position: relative;;
+  }
+
+  to
+  {
+    position: fixed;
+  }
+}
+
+@keyframes rotate
+{ 
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+/*opens intro doors*/
+@keyframes ascend
+{
+  
+  from
+  {
+    transform: translateY(0%)
+  }
+
+  to
+  {
+    transform: translateY(-200%)
+  }
+
+}
+
+@keyframes descend
+{
+  
+
+  from
+  {
+    transform: translateY(0%)
+  }
+
+  to
+  {
+    transform: translateY(-20%)
+  }
+}
+
+@keyframes fly
+{ 
+  0%, 100%
+  
+  {
+    transform: translateY(0px);
+  }
+50%
+  {
+    transform: translateY(-600px);
+  }
+}
+
+@keyframes skycolor
+{
+  from
+  {
+     background-color: rgb(151, 210, 214);
+  }
+
+  to
+  {
+    background-color: rgb(7, 103, 193);
+  }
+}
+
+@keyframes drop
+{
+  from
+  {
+    transform: translateY(0%)
+  }
+
+  to
+  {
+    transform: translateY(20%)
+  }
+}
+
+@keyframes elevatorsize
+{
+  from
+  {
+   height:500px;
+  }
+
+  to
+  {
+    height:200px;
+  }
+}
+
+@keyframes elevatorsizebig
+{
+  from
+  {
+   height:200px;
+  }
+
+  to
+  {
+    height:2400px;
+  }
+}
+
+@keyframes cloudsize
+{
+  from
+  {
+   height:75%;
+  }
+
+  to
+  {
+    height:15%;
+  }
+}
+
+@keyframes cloudfall
+{
+  from
+  {
+    transform: translateY(-800%)
+  }
+
+  to
+  {
+    transform: translateY(800%)
+  }
+}
+
+@keyframes makevisible
+{
+  from
+  {
+    height: 0%;
+  }
+
+  to
+  {
+    height:15%;
+  }
+}
+
+@keyframes namesize
+{
+  from
+  {
+    font-size: 0px;
+  }
+
+  to
+  {
+    font-size: 40px;
+  }
+}
+
+@keyframes end
+{
+  from
+  {
+    visibility: visible;
+  }
+  to
+  {
+    visibility: hidden;
+  }
+}
+
+@keyframes fadetoblack
+{
+  from
+  {
+     background-color: rgb(106, 29, 169);
+  }
+
+  to
+  {
+    background-color: rgb(1, 3, 4);
+  }
+}
+
+/* ----------- NAVIGATION ---------------*/
+.navigation{
+  height: 100%;
+  width: 230px; 
+  top: 0; 
+  left: 0;
+  background-color: rgb(237, 232, 171);
+  position: fixed;
+  overflow: hidden;
+  
+}
+
+.navigation a{
+  padding: 15px 8px 6px 20px;
+  text-decoration: none;
+  font-size: 20px;
+  color: burlywood;
+  font-family: "Special Elite";
+  transition: 2s  all;
+  border: 5px;
+  border-bottom: black;
+  width:100%;
+  height: 90px;
+  align-items: center;
+  justify-content: center;
+  display: flex; 
+  animation: spinNav 2s linear;
+}
+
+.navigation a:hover{
+  animation: spinNav 2s linear;
+  text-decoration: none;
+  color:brown;
+  font-size: 22px;
+
+}
+
+
+
+/* ----------- MAIN PANEL ---------------*/
+#mainPanel {
+ margin-left: 230px;
+  overflow: hidden;
+}
+
+
+
+/* ----------- HOTELS ---------------*/
+#hotels{
+  height: 500px;
+  background-color: rgb(49, 8, 8);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width:100%;
+
+  font-family: "Special Elite";
+  padding-top: 100px;
+}
+
+#attractions{
+  height: 400px;
+  background-color: rgb(211, 237, 245);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width:100%;
+  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 95%);
+  font-family: "Special Elite";
+    padding-top: 100px;
+}
+
+.title{
+  font-family: "Special Elite";
+}
+
+.para{
+  font-family: "Special Elite";
+  font-size: 20px;
+}
+
+#buttons{
+  background-color: rgb(191, 240, 117);
+  color:white;
+  font-family: "Special Elite";
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+  border-radius: 30px;
+  border-color: white;
+  
+}
+/* ----------- ANIMATED SCENE ---------------*/
+#scene
+{
+  height: 100vh;
+  width: 1200px;
+  position: absolute;
+  overflow: hidden;
+  background-image: linear-gradient(
+      rgb(218, 218, 218), 
+      rgb(245, 255, 255)), url("");
+  transition: 3s  all;
+}
+
+#sites{
+  height:100vh;
+  background-image: linear-gradient(
+      rgba(136, 238, 240, 0.577), 
+      rgba(245, 255, 255, 0.385)), url("park.jpg");
+  background-repeat: repeat-x;
+  animation: animatebg 15s linear infinite;
+  bottom:40%;
+  width:100%;
+  overflow: hidden;
+}
+
+#walker{
+  background: url('images/scene/people/manwalking.png');
+  width:184px;
+  height:325px;
+  animation: walk 1s steps(4) infinite, forward 60s infinite;
+  position: absolute;
+  bottom:5.5%;
+  overflow: hidden;
+  
+}
+
+#scenefloor{
+  bottom: 0;
+  background-image: linear-gradient(
+      rgb(209, 209, 209), 
+      rgb(255, 255, 255)), url("");
+  position: absolute;
+  height: 5%;
+  width:100%;
+  overflow: hidden;
+  
+}
+
+#logo{
+  animation: spinLogo 4s reverse linear;
+  
+}
+/* keyframes for scene */
+@keyframes walk{
+  0%
+  {
+    background-position:0px;
+  }
+  100%
+  {
+    background-position: 1472px;
+  }
+}
+
+@keyframes forward{
+  0%{
+    transform: translateX(-20px);
+  }
+
+  100%{
+    transform: translateX(1400px);
+  }
+}
+
+@keyframes spinLogo{
+  100%{
+    transform: rotateX(360deg)
+  }
+}
+
+@keyframes spinLogo{
+  100%{
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes spinNav{
+  100%{
+    transform: rotateX(360deg)
+  }
+}
+
+@keyframes animatebg{
+  100%
+  {
+    background-position:-20px;
+  }
+  0%
+  {
+    background-position: 1200px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+@keyframes bubblesUp{
+  0%{
+    transform: translateY(-300%);
+    transform: translateX(-80%);
+    
+  }
+
+  100%{
+    transform: translateY(250%);
+    
+  }
+}
+
+@keyframes bubblesRight{
+  0%{
+    transform: translateX(-300%);
+    
+  }
+
+  100%{
+    transform: translateX(250%);
+    
+  }
+}
+
+@keyframes swimLeft{
+  0%{
+    transform: translateX(1400px); 
+  }
+
+  100%{
+    transform: translateX(-300px);
+    
+  }
+}
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+@keyframes waveright{
+  100%{
+    transform: rotate(10deg);
+  }
+}
+@keyframes waveleft{
+  100%{
+    transform: rotate(-10deg);
+  }
+}
+
+
+
+#fishtank{
+
+  
+  height:80vh;
+  animation: animatebg 30s linear infinite;
+  
+ 
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: repeat-x;
+  
+  
+}
+
+/* BUBBLES MULTI 
+#bubble1{
+  background-color: rgba(0, 0, 255, 0);
+  width:40px;
+  height:40px;
+  top:0%;
+  left:0px;
+  position: relative;
+  animation: bubblesUp 7s alternate infinite;
+}
+#bubble2{
+  background-color: rgba(0, 0, 255, 0);
+  width:80px;
+  height:80px;
+  top:40%;
+  left:75%;
+  position: relative;
+  animation: bubblesUp 12s ease alternate-reverse infinite;
+  
+}
+#bubble3{
+  background-color: rgba(0, 0, 255, 0);
+  width:25px;
+  height:25px;
+  top:0%;
+  left:30%;
+  position: relative;
+  animation: bubblesUp 10s ease alternate-reverse infinite;
+  opacity: 90%;
+}
+
+#bubble4{
+  background-color: rgba(0, 0, 255, 0);
+  width:60px;
+  height:60px;
+  top:80%;
+  left:800px;
+  position: relative;
+  animation: bubblesUp 10s alternate infinite;
+}
+
+/* BUBBLE SINGLES 
+#bubble5{
+  background-color: rgba(0, 0, 255, 0);
+  width:40px;
+  height:40px;
+  top:40%;
+  left:0px;
+  position: relative;
+  animation: bubblesUp 3s alternate infinite; 
+}
+#bubble6{
+  background-color: rgba(0, 0, 255, 0);
+  width:20px;
+  height:20px;
+  top:0%;
+  left:20px;
+  position: relative;
+  animation: bubblesUp 6s alternate infinite;
+  
+}
+#bubble7{
+  width:60px;
+  height:60px;
+  top:80%;
+  left:80%;
+  position: relative;
+  animation: bubblesUp 5s alternate infinite;
+}
+
+#bubble8{
+  
+  width:70px;
+  height:70px;
+  top:50%;
+  left:80%;
+  position: relative;
+  animation: bubblesUp 8s alternate infinite;
+}
+
+#bubble9{
+  background-color: rgba(0, 0, 255, 0);
+  width:35px;
+  height:35px;
+  top:10%;
+  left:30px;
+  position: relative;
+  animation: bubblesUp 8s alternate infinite;
+}
+
+#darkfish{
+  position: relative;
+}
+
+#darkfish1{
+  width:50px;
+  height:50px;
+  anim
+  opacity: 60%;
+}
+
+#darkfish2{
+  width:55px;
+  height:45px;
+  animation: swimLeft 13s ease infinite;
+  opacity: 60%;
+  position: relative;
+}
+
+#darkfish3{
+  width:50px;
+  height:50px;
+  animation: swimLeft 12s ease infinite;
+  opacity: 60%;
+  position: relative;
+}
+
+#purplefish1{
+  animation: forward 15s linear infinite;
+
+}
+#plant{
+  position: relative;
+  animation: forward 15s ease-in-out infinite;
+}
+#seaweed{
+  background-color: rgba(99, 99, 223, 0);
+  bottom:0;
+  position: absolute;
+
+}
+
+#seaweed1{
+  background-color: rgba(99, 99, 223, 0);
+  animation:waveright 3s ease-in-out alternate-reverse infinite;
+  opacity: 60%;
+  bottom:0;
+  position: absolute;
+  left:20px;
+  width: 80px;
+  height: 100px;
+   -webkit-box-reflect: right;
+
+}
+#seaweed2{
+  
+  animation:waveleft 2s ease-in-out alternate-reverse infinite;
+  opacity: 70%;
+  left:20px;
+  width: 100px;
+  height: 100px;
+  -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+
+}
+
+#rock{
+  height: 40px;
+  width:60px;
+  left:20px;
+  bottom:0;
+  position: absolute;
+  -webkit-box-reflect: below;
+
+}
+
+#sand{
+  bottom:0;
+  position: absolute;
+  right:800px;
+
+}
+*/
